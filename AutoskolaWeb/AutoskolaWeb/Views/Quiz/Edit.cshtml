@@ -1,0 +1,29 @@
+﻿@model AutoskolaWeb.Model.Quiz
+
+@{
+    ViewBag.Title = "Izmjeni kviz";
+}
+
+<h2>Izmjeni kviz</h2>
+
+@using (Html.BeginForm()) 
+{
+    
+    <text>
+        @Html.Partial("_CreateOrEdit")
+        @Html.HiddenFor(p => p.ID)
+    </text>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@using (Html.BeginForm())
+{ 
+    <text>
+        @Html.Partial("_QuestionTable", Model.Questions.ToList())
+        @Html.HiddenFor(p => p.ID, new { id = "QuizId" })
+      
+    </text>
+}

@@ -1,0 +1,55 @@
+﻿@model List<AutoskolaWeb.Model.Quiz>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pregled kvizova</h2>
+
+@Html.Partial("_QuizFilter", new AutoskolaWeb.Models.QuizFilterModel())
+
+@Html.Partial("_IndexTable", Model)
+
+@section scripts{
+    
+    <style type="text/css">
+        table.table tr.bold{
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $(".quiz-filter-form .submit-button").on("click", function () {
+                $.ajax({
+                    url: '@Url.Action("IndexAjax")',
+                    method: "POST",
+                    data: $(this).closest('form').serialize(),
+                    success: function(data){
+                        $("#tbl-quizzes").replaceWith(data);
+                    }
+
+                });
+            });
+        });
+
+        function deleteRow(link) {
+            var tr = $(link).closest('tr');
+            $.ajax({
+                url: '@Url.Action("Delete")',
+                method: "GET",
+                data: { 'id': tr.attr('quizId')},
+                success: function (data) {
+                    if (data == "OK")
+                        tr.remove();
+                    else
+                        alert('Brisanje neuspjelo!');
+                }
+
+            });
+        }
+
+      
+
+    </script>
+
+}

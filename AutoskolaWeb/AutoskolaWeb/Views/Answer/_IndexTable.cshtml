@@ -1,0 +1,26 @@
+﻿@model List<AutoskolaWeb.Model.Answer>
+
+<table id="tbl-quizzes" class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Odgovor</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var answer in Model)
+        {
+            <tr quizid="@answer.ID">
+                <td>@answer.ID</td>
+                <td>@answer.AnswerText</td>
+                <td>@Html.ActionLink("Pregled", "Details", new { id = answer.ID })</td>
+                <td>@Html.ActionLink("Uredi", "Edit", new { id = answer.ID })</td>
+                <td><a href="javascript:void(0)" onclick="deleteRow(this);">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

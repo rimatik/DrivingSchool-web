@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoskolaWeb", "AutoskolaWeb\AutoskolaWeb.csproj", "{2A9D9A9C-97FF-4138-8C0B-4700C91CD215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoskolaWeb.Model", "AutoskolaWeb.Model\AutoskolaWeb.Model.csproj", "{709E230D-9FEB-4CCE-A8E7-7354EEE52A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoskolaWeb.DAL", "AutoskolaWeb.DAL\AutoskolaWeb.DAL.csproj", "{7870A2E9-0F08-45F5-9546-2A8A8DEEAA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A9D9A9C-97FF-4138-8C0B-4700C91CD215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9D9A9C-97FF-4138-8C0B-4700C91CD215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9D9A9C-97FF-4138-8C0B-4700C91CD215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9D9A9C-97FF-4138-8C0B-4700C91CD215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{709E230D-9FEB-4CCE-A8E7-7354EEE52A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709E230D-9FEB-4CCE-A8E7-7354EEE52A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709E230D-9FEB-4CCE-A8E7-7354EEE52A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709E230D-9FEB-4CCE-A8E7-7354EEE52A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7870A2E9-0F08-45F5-9546-2A8A8DEEAA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7870A2E9-0F08-45F5-9546-2A8A8DEEAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7870A2E9-0F08-45F5-9546-2A8A8DEEAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7870A2E9-0F08-45F5-9546-2A8A8DEEAA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿@model List<AutoskolaWeb.Model.Quiz>
+
+<table id="tbl-quizzes" class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Naziv kviza</th>
+            <th>Bodovi</th>
+            <th>Trajanje kviza</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quiz in Model)
+        {
+            <tr quizId="@quiz.ID">
+                <td>@quiz.ID</td>
+                <td>@quiz.QuizName</td>
+                <td>@quiz.QuizPoints</td>
+                <td>@quiz.Duration</td>
+                <td>@Html.ActionLink("Pregled", "Details", new { id = quiz.ID })</td>
+                <td>@Html.ActionLink("Uredi", "Edit", new { id = quiz.ID })</td>
+                <td>@Html.ActionLink("Dodaj pitanje", "AddQuestion", new { id = quiz.ID })</td>
+                <td><a href="javascript:void(0)" onclick="deleteRow(this);">Delete</a></td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model AutoskolaWeb.Model.Question
+
+@{
+    ViewBag.Title = "Napravi novo pitanje";
+}
+
+<h2>Napravi novo pitanje</h2>
+
+@using (Html.BeginForm())
+{
+    <text>
+        @Html.Partial("_CreateOrEdit")
+    </text>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,64 @@
+﻿@model List<AutoskolaWeb.Model.Answer>
+
+<table id="tbl-quizzes" class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Odgovor</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var answer in Model)
+        {
+
+            <tr answerid="@answer.ID">
+                <td>@answer.ID</td>
+                <td>@answer.AnswerText</td>
+                <td><a href="javascript:void(0)" onclick="deleteRowAnswer(this);">Delete</a></td>
+            </tr>
+
+
+        }
+
+    </tbody>
+</table>
+<script type="text/javascript">
+    $(function () {
+        $(".quiz-filter-form .submit-button").on("click", function () {
+            $.ajax({
+                url: '@Url.Action("IndexAjax")',
+                method: "POST",
+                data: $(this).closest('form').serialize(),
+                success: function (data) {
+                    $("#tbl-quizzes").replaceWith(data);
+                }
+
+            });
+        });
+    });
+
+
+    function deleteRowAnswer(link) {
+        var tr = $(link).closest('tr');
+        var id= $('#QuestionId').val();
+        $.ajax({
+            url: '@Url.Action("DeleteAnswer")',
+            method: "GET",
+            data: {
+                'id': tr.attr('answerid'),
+                'questionId': id
+            },
+                success: function (data) {
+                if (data == "OK")
+                    tr.remove();
+                else
+                    alert('Brisanje neuspjelo!');
+            }
+
+        });
+    }
+
+</script>
+

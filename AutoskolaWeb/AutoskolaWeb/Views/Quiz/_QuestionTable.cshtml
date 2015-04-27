@@ -1,0 +1,66 @@
+﻿@model List<AutoskolaWeb.Model.Question>
+
+<table id="tbl-quizzes" class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Pitanje</th>
+            <th>Odgovor</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model)
+        {
+            
+            <tr questionid="@question.ID">
+                <td>@question.ID</td>
+                <td>@question.QuestionText</td>
+                <td>@question.CorrectAnswer</td>
+                <td><a href="javascript:void(0)" onclick="deleteRowQuestion(this);">Delete</a></td>
+            </tr>
+
+
+        }
+
+    </tbody>
+</table>
+<script type="text/javascript">
+    $(function () {
+        $(".quiz-filter-form .submit-button").on("click", function () {
+            $.ajax({
+                url: '@Url.Action("IndexAjax")',
+                method: "POST",
+                data: $(this).closest('form').serialize(),
+                success: function (data) {
+                    $("#tbl-quizzes").replaceWith(data);
+                }
+
+            });
+        });
+    });
+
+
+    function deleteRowQuestion(link) {
+        var tr = $(link).closest('tr');
+        var id= $('#QuizId').val();
+        $.ajax({
+            url: '@Url.Action("DeleteQuestion")',
+            method: "GET",
+            data: {
+                'id': tr.attr('questionId'),
+                'quizId': id
+            },
+                success: function (data) {
+                if (data == "OK")
+                    tr.remove();
+                else
+                    alert('Brisanje neuspjelo!');
+            }
+
+        });
+    }
+
+</script>
+

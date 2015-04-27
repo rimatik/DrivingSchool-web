@@ -1,0 +1,13 @@
+﻿@model AutoskolaWeb.Models.QuizFilterModel
+
+<form action="@Url.Action("AdvancedSearch")" method="post" class="quiz-filter-form form-horizontal" role="form">
+    <div class="form-group">
+        @Html.TextBoxFor(p => p.QuizName, new { @class = "form-control", placeholder = "Pretraga po nazivu kviza" })
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-default submit-button">Search</button>
+        </div>
+    </div>
+
+</form>

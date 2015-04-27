@@ -1,0 +1,40 @@
+﻿@model AutoskolaWeb.Model.Question
+
+@{
+    ViewBag.Title = "Detalji pitanja";
+}
+
+<h2>Pregled detalja pitanja</h2>
+
+@if (Model == null)
+{
+    <div class="alert alert-danger" role="alert">Ne postoji odabrano pitanje!</div>
+}
+else
+{
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>@Model.ID</td>
+            </tr>
+            <tr>
+                <th>Tekst pitanja</th>
+                <td>@Model.QuestionText</td>
+            </tr>
+            <tr>
+                <th>Točan odgovor</th>
+                <td>@Model.CorrectAnswer</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ActionLink("Uredi", "Edit", new { id = Model.ID })</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+﻿@using AutoskolaWeb.Services
+
+@{
+    <script type="text/javascript">
+    $(function () {
+        $('.date-picker').datetimepicker({
+            locale: '@System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName',
+            format: '@Html.GetMomentJsDatePattern()'
+        });
+
+        $('.date-time-picker').datetimepicker({
+            locale: '@System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName',
+            format: '@Html.GetMomentJsDateTimePattern()'
+        });
+    });
+
+    $.validator.methods.date = function (value, element) {
+        if (this.optional(element) && (value == '' || value == undefined || value == null))
+            return true;
+
+        var pattern = '@Html.GetMomentJsDatePattern()';
+        if ($(element).closest('.input-group').hasClass('date-time-picker'))
+            pattern = '@Html.GetMomentJsDateTimePattern()';
+
+        return moment(value, pattern).isValid();
+    }
+
+    $.validator.methods.number = function (value, element) {
+        if (this.optional(element))
+            return true;
+        if (!isNaN(Globalize.parseFloat(value, '@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName'))) {
+            return true;
+        }
+        return false;
+    }
+
+</script>
+}

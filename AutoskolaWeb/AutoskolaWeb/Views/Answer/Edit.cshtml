@@ -1,0 +1,20 @@
+﻿@model AutoskolaWeb.Model.Answer
+
+@{
+    ViewBag.Title = "Izmjeni odgovor";
+}
+
+<h2>Izmjeni odgovor</h2>
+
+@using (Html.BeginForm())
+{
+
+    <text>
+        @Html.Partial("_CreateOrEdit")
+        @Html.HiddenFor(p => p.ID)
+    </text>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

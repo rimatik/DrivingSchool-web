@@ -1,0 +1,19 @@
+﻿@model AutoskolaWeb.Model.Question
+@{
+    ViewBag.Title = "Dodaj odgovor";
+}
+
+<h2>Dodaj odgovor</h2>
+
+@using (Html.BeginForm())
+{
+    <text>
+        @Html.Partial("_AddAnswer")
+        @Html.HiddenFor(p => p.ID)
+    </text>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
