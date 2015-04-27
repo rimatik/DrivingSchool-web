@@ -91,7 +91,7 @@ namespace AutoskolaWeb.Controllers
             {
                 QuizRepository.Insert(model);
                 QuizRepository.Save();
-                //return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
             FillDropdownValues();
