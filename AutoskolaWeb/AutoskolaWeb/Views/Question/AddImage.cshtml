@@ -1,0 +1,19 @@
+﻿@model AutoskolaWeb.Model.Question
+@{
+    ViewBag.Title = "Dodaj sliku za pitanje";
+}
+
+<h2>Dodaj sliku za pitanje</h2>
+
+@using (Html.BeginForm())
+{
+    <text>
+        @Html.Partial("_AddImage")
+        @Html.HiddenFor(p => p.ID)
+    </text>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

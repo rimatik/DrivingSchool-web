@@ -73,13 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnswerRepository.cs" />
-    <Compile Include="Migrations\201504241055460_aslaspapsfa.cs" />
-    <Compile Include="Migrations\201504241055460_aslaspapsfa.Designer.cs">
-      <DependentUpon>201504241055460_aslaspapsfa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201504270813402_asfasfhdfhdr.cs" />
-    <Compile Include="Migrations\201504270813402_asfasfhdfhdr.Designer.cs">
-      <DependentUpon>201504270813402_asfasfhdfhdr.cs</DependentUpon>
+    <Compile Include="Migrations\201505041949059_asfewefewg.cs" />
+    <Compile Include="Migrations\201505041949059_asfewefewg.Designer.cs">
+      <DependentUpon>201505041949059_asfewefewg.cs</DependentUpon>
     </Compile>
     <Compile Include="QuestionRepository.cs" />
     <Compile Include="QuizManagerDbContext.cs" />
@@ -99,11 +95,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504241055460_aslaspapsfa.resx">
-      <DependentUpon>201504241055460_aslaspapsfa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504270813402_asfasfhdfhdr.resx">
-      <DependentUpon>201504270813402_asfasfhdfhdr.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505041949059_asfewefewg.resx">
+      <DependentUpon>201505041949059_asfewefewg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

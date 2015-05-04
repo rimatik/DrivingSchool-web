@@ -298,6 +298,8 @@
     <Content Include="Views\Question\_AddAnswer.cshtml" />
     <Content Include="Views\Question\AddAnswer.cshtml" />
     <Content Include="Views\Question\_AnswerTable.cshtml" />
+    <Content Include="Views\Question\_AddImage.cshtml" />
+    <Content Include="Views\Question\AddImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -316,7 +318,9 @@
       <Name>AutoskolaWeb.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

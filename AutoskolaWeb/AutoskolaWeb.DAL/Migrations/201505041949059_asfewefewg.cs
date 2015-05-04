@@ -3,7 +3,7 @@ namespace AutoskolaWeb.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class aslaspapsfa : DbMigration
+    public partial class asfewefewg : DbMigration
     {
         public override void Up()
         {
@@ -27,6 +27,7 @@ namespace AutoskolaWeb.DAL.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         QuestionText = c.String(),
                         CorrectAnswer = c.String(),
+                        Image = c.Binary(),
                         DateCreated = c.DateTime(nullable: false),
                         DateModified = c.DateTime(),
                         CreatedByUser = c.String(),

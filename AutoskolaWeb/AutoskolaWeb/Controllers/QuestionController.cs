@@ -3,6 +3,7 @@ using AutoskolaWeb.Model;
 using AutoskolaWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -42,6 +43,7 @@ namespace AutoskolaWeb.Controllers
             return View(model);
         }
 
+
         [Authorize(Roles = "Admin")]
         public ActionResult AddAnswer(int id)
         {
@@ -72,6 +74,50 @@ namespace AutoskolaWeb.Controllers
             FillDropdownValues();
             return View(formModel);
         }
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddImage(int id) {
+        
+            var model = QuestionRepository.Find(id);
+            return View(model);
+        
+        
+        }
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ActionName("AddImage")]
+        public ActionResult AddImagePost(HttpPostedFileBase file, int id)
+        {
+
+            if (file != null && file.ContentLength > 0)
+            {
+               
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/App_Data/images"), fileName);
+                file.SaveAs(path);
+            }
+
+            if (ModelState.IsValid)
+            {
+                var modelDb = QuestionRepository.Find(id);
+
+                modelDb.Image = new byte[file.ContentLength];
+                file.InputStream.Read(modelDb.Image, 0, file.ContentLength);
+                
+                if (this.TryUpdateModel(modelDb))
+                {
+                    QuestionRepository.Update(modelDb);
+                    QuestionRepository.Save();
+
+                    //return RedirectToAction("Index");
+                }
+
+            }
+            
+            return View();
+        
+        
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {

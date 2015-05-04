@@ -7,13 +7,13 @@ namespace AutoskolaWeb.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class aslaspapsfa : IMigrationMetadata
+    public sealed partial class asfewefewg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(aslaspapsfa));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(asfewefewg));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504241055460_aslaspapsfa"; }
+            get { return "201505041949059_asfewefewg"; }
         }
         
         string IMigrationMetadata.Source
