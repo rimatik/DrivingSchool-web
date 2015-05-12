@@ -82,40 +82,46 @@ namespace AutoskolaWeb.Controllers
         
         
         }
+
+        
         [HttpPost]
         [Authorize(Roles = "Admin")]
         [ActionName("AddImage")]
         public ActionResult AddImagePost(HttpPostedFileBase file, int id)
         {
-
             if (file != null && file.ContentLength > 0)
             {
-               
                 var fileName = Path.GetFileName(file.FileName);
                 var path = Path.Combine(Server.MapPath("~/App_Data/images"), fileName);
                 file.SaveAs(path);
-            }
 
-            if (ModelState.IsValid)
-            {
-                var modelDb = QuestionRepository.Find(id);
 
-                modelDb.Image = new byte[file.ContentLength];
-                file.InputStream.Read(modelDb.Image, 0, file.ContentLength);
-                
-                if (this.TryUpdateModel(modelDb))
+                if (ModelState.IsValid)
                 {
-                    QuestionRepository.Update(modelDb);
-                    QuestionRepository.Save();
+                    var modelDb = QuestionRepository.Find(id);
 
-                    //return RedirectToAction("Index");
+                    modelDb.Image = new byte[file.ContentLength];
+                    file.InputStream.Read(modelDb.Image, 0, file.ContentLength);
+
+                    if (this.TryUpdateModel(modelDb))
+                    {
+                        QuestionRepository.Update(modelDb);
+                        QuestionRepository.Save();
+
+                        return RedirectToAction("Index");
+                    }
+
                 }
-
             }
-            
             return View();
-        
-        
+        }
+        [HttpGet]
+        public FileContentResult getImg(int id)
+        {
+            byte[] byteArray = QuestionRepository.Find(id).Image;
+            return byteArray != null
+                ? new FileContentResult(byteArray, "image/jpeg")
+                : null;
         }
 
         [Authorize(Roles = "Admin")]

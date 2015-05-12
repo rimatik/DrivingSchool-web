@@ -199,6 +199,7 @@
     <Content Include="App_Data\AutoskolaDb_log.ldf">
       <DependentUpon>AutoskolaDb.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\images\wings_for_life_staza.jpg" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -300,6 +301,7 @@
     <Content Include="Views\Question\_AnswerTable.cshtml" />
     <Content Include="Views\Question\_AddImage.cshtml" />
     <Content Include="Views\Question\AddImage.cshtml" />
+    <Content Include="Views\Question\_GetImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -318,9 +320,7 @@
       <Name>AutoskolaWeb.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

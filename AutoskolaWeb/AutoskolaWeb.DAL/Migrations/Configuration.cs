@@ -31,6 +31,11 @@ namespace AutoskolaWeb.DAL.Migrations
                 p => p.Name,
                 new IdentityRole("Admin"),
                 new IdentityRole("User"));
+            //context.Users.AddOrUpdate(
+            //    p=>p.Id,
+            //        new User { Id = "c4ca4238a0b923820dcc509a6f75849b", Name = "Slaven", Surname = "Raða", Autoskola = "Zagreb", Email = "srada1@net.hr", 
+            //            AutoskolaCode = 555, PasswordHash = "a396eb3d64243e936d195296ee039c03" }
+            //    );
             
 
         }
