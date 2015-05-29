@@ -3,7 +3,7 @@ namespace AutoskolaWeb.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class asfewefewg : DbMigration
+    public partial class Oasfgasgfas : DbMigration
     {
         public override void Up()
         {

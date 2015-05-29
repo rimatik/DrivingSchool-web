@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b661d35cf644bf1a9aed4e04a8f54a0" Name="Diagram1">
+        <EntityTypeShape EntityType="AutoskolaDbModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.Answers" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.AspNetUsers" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.Questions" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.Quizs" Width="1.5" PointX="6.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoskolaDbModel.Results" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <AssociationConnector Association="AutoskolaDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoskolaDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoskolaDbModel.FK_dbo_Quizs_dbo_Results_ResultsID" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoskolaDbModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoskolaDbModel.QuestionAnswers" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoskolaDbModel.QuizQuestions" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
