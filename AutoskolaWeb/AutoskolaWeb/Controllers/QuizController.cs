@@ -13,6 +13,14 @@ namespace AutoskolaWeb.Controllers
     [Authorize]
     public class QuizController : ControllerBase
     {
+        [ActionName("getQuizzes")]
+        public ActionResult getAllQuizess() {
+
+            var model = 0;
+
+         return Json(model);
+        }
+
         [Authorize(Roles = "User,Admin")]
         public ActionResult Index()
         {

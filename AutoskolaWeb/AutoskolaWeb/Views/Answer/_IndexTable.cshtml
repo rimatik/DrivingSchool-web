@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Odgovor</th>
+            <th>Answer</th>
             <th></th>
             <th></th>
         </tr>
@@ -15,8 +15,8 @@
             <tr quizid="@answer.ID">
                 <td>@answer.ID</td>
                 <td>@answer.AnswerText</td>
-                <td>@Html.ActionLink("Pregled", "Details", new { id = answer.ID })</td>
-                <td>@Html.ActionLink("Uredi", "Edit", new { id = answer.ID })</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = answer.ID })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = answer.ID })</td>
                 <td><a href="javascript:void(0)" onclick="deleteRow(this);">Delete</a></td>
             </tr>
         }

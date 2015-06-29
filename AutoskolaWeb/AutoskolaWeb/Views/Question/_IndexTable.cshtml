@@ -4,8 +4,8 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Pitanje</th>
-            <th>Točan odgovor</th>
+            <th>Question</th>
+            <th>Correct answer</th>
             <th></th>
             <th></th>
         </tr>
@@ -17,10 +17,10 @@
                 <td>@question.ID</td>
                 <td>@question.QuestionText</td>
                 <td>@question.CorrectAnswer</td>
-                <td>@Html.ActionLink("Pregled", "Details", new { id = question.ID })</td>
-                <td>@Html.ActionLink("Uredi", "Edit", new { id = question.ID })</td>
-                <td>@Html.ActionLink("Dodaj odgovor", "AddAnswer", new { id = question.ID })</td>
-                <td>@Html.ActionLink("Dodaj sliku za pitanje", "AddImage", new { id = question.ID })</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = question.ID })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = question.ID })</td>
+                <td>@Html.ActionLink("Add answer", "AddAnswer", new { id = question.ID })</td>
+                <td>@Html.ActionLink("Add image for question", "AddImage", new { id = question.ID })</td>
                 <td><a href="javascript:void(0)" onclick="deleteRow(this);">Delete</a></td>
             </tr>
         }

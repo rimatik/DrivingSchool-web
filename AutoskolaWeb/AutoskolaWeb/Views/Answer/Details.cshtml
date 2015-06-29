@@ -1,10 +1,10 @@
 ﻿@model AutoskolaWeb.Model.Answer
 
 @{
-    ViewBag.Title = "Detalji odgovora";
+    ViewBag.Title = "Answer details";
 }
 
-<h2>Pregled detalja odgovora</h2>
+<h2>Answer details</h2>
 
 @if (Model == null)
 {
@@ -19,11 +19,11 @@ else
                 <td>@Model.ID</td>
             </tr>
             <tr>
-                <th>Tekst odgovora</th>
+                <th>Answer text</th>
                 <td>@Model.AnswerText</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.ActionLink("Uredi", "Edit", new { id = Model.ID })</td>
+                <td colspan="2">@Html.ActionLink("Edit", "Edit", new { id = Model.ID })</td>
             </tr>
         </tbody>
     </table>
